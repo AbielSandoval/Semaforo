@@ -15,6 +15,8 @@ botonCruzar.addEventListener('click', function(e) {
 
 setInterval(changeLight, 10000);
 
+
+
 function changeLight() {
 
     circles[activeLight].className = 'circle';
@@ -39,4 +41,6 @@ function changeLight() {
     // });
 
 }
+
+
 
