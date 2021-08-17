@@ -10,12 +10,12 @@ function Cruzar() {
 
 botonCruzar.addEventListener('click', function(e) {
     Cruzar();
+    stopLight();
+    // setInterval(stopLight, 20000);
     e.preventDefault();
 });
-
-setInterval(changeLight, 10000);
-
-
+setInterval(changeLight, 20000);
+// setInterval(stopLight, 10000);
 
 function changeLight() {
 
@@ -30,6 +30,7 @@ function changeLight() {
     currentLight.classList.add(currentLight.getAttribute('color'));
     console.log(currentLight.getAttribute('color'));
 
+    
     // var database = firebase.database();
 
     // database.ref('/Color').set({
@@ -40,6 +41,17 @@ function changeLight() {
     //     solicitantes: personasSolicitando
     // });
 
+}
+
+function stopLight(){
+    circles[activeLight].className = 'circle';
+    activeLight = 0;
+
+    var currentLight = circles[activeLight];
+    currentLight.classList.add(currentLight.getAttribute('color'));
+    console.log(currentLight.getAttribute('color'));
+
+    
 }
 
 
